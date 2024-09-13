@@ -82,6 +82,6 @@ func (b *pollBalancer) TakeNext(uint64) (Context, error) {
 	return b.iter.ValueNoError().(Context), nil
 }
 
-func (b *pollBalancer) SetAutoPriWt(uint16) {}
+func (b *pollBalancer) SetAutoPriWt(int16) {}
 
 func (b *pollBalancer) UpdatePriWt(uint64, int) {}

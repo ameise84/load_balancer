@@ -89,7 +89,7 @@ func (b *bestBalancer) TakeNext(uint64) (Context, error) {
 	return v.ctx, nil
 }
 
-func (b *bestBalancer) SetAutoPriWt(weight uint16) {
+func (b *bestBalancer) SetAutoPriWt(weight int16) {
 	b.autoAddWeight = int(weight)
 }
 

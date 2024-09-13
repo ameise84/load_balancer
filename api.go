@@ -22,8 +22,8 @@ type Balancer interface {
 	Range(func(Context) bool)              // Scan Context when return true
 	TakeByID(ctxID uint64) (Context, bool) // return context with ID
 	TakeNext(id uint64) (Context, error)   // RandMode , BestMode and PollMode ignore id , HashMode use id on hash ring
-	SetAutoPriWt(weight uint16)            //BestMode set auto add  priority weight , each time take. default value is 1
-	UpdatePriWt(ctxID uint64, weight int)  // BestMode the priority weight change, each time take, the priority weight value add by [AutoPriWt] auto. the lower the weight value, the higher the priority. the valid range is [0,maxInt]
+	SetAutoPriWt(weight int16)             // BestMode set auto add priority weight, each time take. default value is 1
+	UpdatePriWt(ctxID uint64, weight int)  // BestMode the priority weight change. each time take, the priority weight value add by [AutoPriWt] auto. the lower the weight value, the higher the priority. the valid range is [minInt,maxInt]
 }
 
 func NewBalancer(m Mode) Balancer {

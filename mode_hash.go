@@ -82,6 +82,6 @@ func (b *hashBalancer) TakeNext(id uint64) (Context, error) {
 	return iter.ValueNoError().(Context), nil
 }
 
-func (b *hashBalancer) SetAutoPriWt(uint16) {}
+func (b *hashBalancer) SetAutoPriWt(int16) {}
 
 func (b *hashBalancer) UpdatePriWt(uint64, int) {}
